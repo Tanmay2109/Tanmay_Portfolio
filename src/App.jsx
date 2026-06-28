@@ -17,6 +17,10 @@ function App() {
   return (
     <div className="app-container">
       <div className="bg-noise"></div>
+      {/* Global Background Glows */}
+      <div className="global-glow global-glow-1"></div>
+      <div className="global-glow global-glow-2"></div>
+      <div className="global-glow global-glow-3"></div>
       <Navbar />
       <main>
         <Hero />

@@ -61,9 +61,7 @@ const Skills = () => {
         marginBottom: '4rem'
       }}>
         {skills.map((skillGroup, index) => (
-          <div key={index} className="glass-panel" style={{ padding: '1.5rem', transition: 'transform 0.3s ease' }} 
-               onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-               onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+          <div key={index} className="glass-panel" style={{ padding: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', color: 'var(--accent-primary)' }}>
               {skillGroup.icon}
               <h4 style={{ color: 'var(--text-primary)', fontWeight: '600', fontSize: '1.2rem' }}>{skillGroup.name}</h4>

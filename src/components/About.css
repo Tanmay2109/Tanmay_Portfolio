@@ -43,12 +43,6 @@
   padding: 1.5rem 1rem;
   text-align: center;
   border-radius: 1rem;
-  background: var(--bg-secondary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-}
-
-[data-theme="dark"] .stat-box {
-  background: var(--bg-card);
 }
 
 .stat-number {
@@ -73,16 +67,8 @@
 }
 
 .education-card {
-  background: var(--bg-secondary);
   padding: 3rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--border-color);
   width: 100%;
-}
-
-[data-theme="dark"] .education-card {
-  background: var(--bg-card);
 }
 
 .education-title {

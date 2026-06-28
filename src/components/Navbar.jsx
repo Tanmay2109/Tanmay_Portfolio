@@ -55,10 +55,10 @@ const Navbar = () => {
             onClick={cycleTheme}
             style={{
               background: "transparent",
-              border: "1px solid var(--border-color)",
+              border: "none",
               color: "var(--text-primary)",
               cursor: "pointer",
-              padding: "0.5rem",
+              padding: "0.25rem",
               borderRadius: "50%",
               display: "flex",
               alignItems: "center",

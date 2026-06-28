@@ -85,26 +85,14 @@ const Projects = () => {
               overflow: "hidden",
               display: "flex",
               flexDirection: "column",
-              transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
               cursor: project.link ? "pointer" : "default",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.boxShadow =
-                "0 20px 60px rgba(139, 92, 246, 0.2)";
-              e.currentTarget.style.borderColor = "var(--accent-primary)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
-              e.currentTarget.style.borderColor = "rgba(255,255,255,0.05)";
             }}
           >
             {/* Icon banner area */}
             <div
               style={{
-                background: "rgba(139, 92, 246, 0.08)",
-                borderBottom: "1px solid rgba(139, 92, 246, 0.15)",
+                background: "rgba(8, 145, 178, 0.08)",
+                borderBottom: "1px solid rgba(8, 145, 178, 0.15)",
                 height: "180px",
                 display: "flex",
                 alignItems: "center",
@@ -194,8 +182,8 @@ const Projects = () => {
                   <span
                     key={tagIndex}
                     style={{
-                      background: "rgba(139, 92, 246, 0.08)",
-                      border: "1px solid rgba(139, 92, 246, 0.2)",
+                      background: "rgba(8, 145, 178, 0.08)",
+                      border: "1px solid rgba(8, 145, 178, 0.2)",
                       color: "var(--text-secondary)",
                       fontSize: "0.78rem",
                       padding: "4px 12px",

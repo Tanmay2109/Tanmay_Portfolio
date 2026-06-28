@@ -31,24 +31,10 @@ const Experience = () => {
           <div key={index} className="glass-panel" style={{
             width: '100%',
             padding: '3rem',
-            position: 'relative',
-            overflow: 'hidden',
-            borderTop: '4px solid var(--accent-secondary)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
-            textAlign: 'left',
-            transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'perspective(1500px) scale(1.03) translateY(-10px) rotateX(3deg) rotateY(-2deg)';
-            e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.3)';
-            e.currentTarget.style.borderColor = 'var(--accent-primary)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'perspective(1500px) scale(1) translateY(0) rotateX(0) rotateY(0)';
-            e.currentTarget.style.boxShadow = 'none';
-            e.currentTarget.style.borderColor = 'var(--glass-border)';
+            textAlign: 'left'
           }}>
             {/* Added Company Logo */}
             <div style={{
