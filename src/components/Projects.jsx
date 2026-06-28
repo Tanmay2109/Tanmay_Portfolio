@@ -4,17 +4,54 @@ import { Package, Stethoscope } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: 'Inventory Management System',
-      description: 'An academic full-stack project focused on structured inventory record storage, item entries, and retrieval using HTML, CSS, JavaScript, Node.js, Express, and MySQL.',
-      tags: ['Node.js', 'Express', 'MySQL', 'JavaScript', 'HTML/CSS'],
-      icon: <Package size={40} className="project-folder" style={{ color: 'var(--text-primary)', transition: 'color 0.3s ease' }} />
+      title: "Chunav AI – AI-Powered Civic Assistant",
+      description:
+        "A multilingual AI assistant for election guidance and civic awareness. Features AI-powered conversations, voice input, and cloud deployment via Vercel.",
+      tags: ["React.js", "Node.js", "Express", "Groq API"],
+      link: "https://chunavai.vercel.app/",
+      icon: (
+        <Vote
+          size={40}
+          className="project-folder"
+          style={{
+            color: "var(--text-primary)",
+            transition: "color 0.3s ease",
+          }}
+        />
+      ),
     },
     {
-      title: 'MedBot (Medical Chatbot)',
-      description: 'An interactive chatbot application backed by a Python/Flask server. Analyzes medical queries using external APIs and handles scalable interactions with Gunicorn/Requests.',
-      tags: ['Python', 'Flask', 'Gunicorn', 'Requests', 'HTML/CSS'],
-      icon: <Stethoscope size={40} className="project-folder" style={{ color: 'var(--text-primary)', transition: 'color 0.3s ease' }} />
-    }
+      title: "MedBot (Medical Chatbot)",
+      description:
+        "A chatbot to answer basic medical queries using text input, built with vanilla JavaScript, HTML, CSS, and Google APIs for responses.",
+      tags: ["JavaScript", "HTML/CSS", "Google APIs"],
+      icon: (
+        <Stethoscope
+          size={40}
+          className="project-folder"
+          style={{
+            color: "var(--text-primary)",
+            transition: "color 0.3s ease",
+          }}
+        />
+      ),
+    },
+    {
+      title: "Nazar – Smart Blind Stick Companion App",
+      description:
+        "Real-time Android app interfacing with an IoT-based smart blind stick. Monitors live sensor data, hazard alerts, and graphs via Firebase, with Google Sign-In authentication.",
+      tags: ["Kotlin", "Android", "Firebase", "Google Sign-In API"],
+      icon: (
+        <Accessibility
+          size={40}
+          className="project-folder"
+          style={{
+            color: "var(--text-primary)",
+            transition: "color 0.3s ease",
+          }}
+        />
+      ),
+    },
   ];
 
   return (
