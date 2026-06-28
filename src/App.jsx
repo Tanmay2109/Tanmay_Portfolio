@@ -8,6 +8,7 @@ import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import Hobbies from './components/Hobbies';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 import './App.css';
@@ -26,6 +27,7 @@ function App() {
         <Certifications />
         <Projects />
         <Hobbies />
+        <Contact />
       </main>
       <Footer />
       <Chatbot />
