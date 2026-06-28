@@ -1,29 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Color Palette - Premium Dark */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #131313;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-card-hover: rgba(255, 255, 255, 0.08);
-  --bg-nav: rgba(10, 10, 10, 0.8);
-  
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  
-  --accent-primary: #8b5cf6; /* Vibrant Purple */
-  --accent-secondary: #3b82f6; /* Vibrant Blue */
-  --accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  --accent-gradient-hover: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
-  
-  --border-color: rgba(255, 255, 255, 0.1);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.05);
-
-  --nav-height: 80px;
-}
-
-[data-theme="light"] {
+  /* Color Palette - Light (Default) */
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
   --bg-card: rgba(0, 0, 0, 0.03);
@@ -34,34 +12,35 @@
   --text-secondary: #475569;
   --text-muted: #64748b;
   
-  --accent-primary: #6366f1; /* Indigo */
-  --accent-secondary: #3b82f6; /* Blue */
+  --accent-primary: #6366f1;
+  --accent-secondary: #3b82f6;
   --accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   --accent-gradient-hover: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
   
   --border-color: rgba(0, 0, 0, 0.1);
   --glass-border: 1px solid rgba(0, 0, 0, 0.05);
+
+  --nav-height: 80px;
 }
 
-[data-theme="paper"] {
-  --bg-primary: #f4f0ee; /* Very light subtle paper tone */
-  --bg-secondary: #eae4de;
-  --bg-card: #ffffff; /* Solid white for paper cards */
-  --bg-card-hover: #fdfcfa;
-  --bg-nav: rgba(244, 240, 238, 0.85);
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #131313;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --bg-nav: rgba(10, 10, 10, 0.8);
   
-  --text-primary: #1a1a1a;
-  --text-secondary: #333333;
-  --text-muted: #555555;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
   
-  --accent-primary: #8b2525; /* Deep academic red */
-  --accent-secondary: #1a4a76; /* Classic academic navy */
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #3b82f6;
   --accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  --accent-gradient-hover: linear-gradient(135deg, #6b1b1b 0%, #103454 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
   
-  --border-color: rgba(0, 0, 0, 0.15);
-  --glass-border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Adds soft paper shadows globally */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -220,7 +199,7 @@ ul {
 
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
-  opacity: 0; /* Starts hidden, animation makes it 1 */
+  opacity: 0;
 }
 
 .animate-float {

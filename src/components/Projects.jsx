@@ -1,9 +1,10 @@
 import React from "react";
-import { Stethoscope, Vote, EyeOff } from "lucide-react";
+import { Stethoscope, Vote, Eye, ExternalLink } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
+      category: "AI / CIVIC TECH",
       title: "Chunav AI – AI-Powered Civic Assistant",
       description:
         "A multilingual AI assistant for election guidance and civic awareness. Features AI-powered conversations, voice input, and cloud deployment via Vercel.",
@@ -11,42 +12,46 @@ const Projects = () => {
       link: "https://chunavai.vercel.app/",
       icon: (
         <Vote
-          size={40}
+          size={64}
           className="project-folder"
           style={{
-            color: "var(--text-primary)",
+            color: "var(--accent-primary)",
             transition: "color 0.3s ease",
           }}
         />
       ),
     },
     {
+      category: "AI / HEALTHCARE",
       title: "MedBot (Medical Chatbot)",
       description:
         "A chatbot to answer basic medical queries using text input, built with vanilla JavaScript, HTML, CSS, and Google APIs for responses.",
       tags: ["JavaScript", "HTML/CSS", "Google APIs"],
+      link: null,
       icon: (
         <Stethoscope
-          size={40}
+          size={64}
           className="project-folder"
           style={{
-            color: "var(--text-primary)",
+            color: "var(--accent-primary)",
             transition: "color 0.3s ease",
           }}
         />
       ),
     },
     {
+      category: "IOT / ANDROID",
       title: "Nazar – Smart Blind Stick Companion App",
       description:
         "Real-time Android app interfacing with an IoT-based smart blind stick. Monitors live sensor data, hazard alerts, and graphs via Firebase, with Google Sign-In authentication.",
       tags: ["Kotlin", "Android", "Firebase", "Google Sign-In API"],
+      link: null,
       icon: (
-        <EyeOff
-          size={40}
+        <Eye
+          size={64}
           className="project-folder"
           style={{
-            color: "var(--text-primary)",
+            color: "var(--accent-primary)",
             transition: "color 0.3s ease",
           }}
         />
@@ -67,8 +72,8 @@ const Projects = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "2.5rem",
+          gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+          gap: "2rem",
         }}
       >
         {projects.map((project, index) => (
@@ -76,86 +81,132 @@ const Projects = () => {
             key={index}
             className="glass-panel"
             style={{
-              padding: "2.5rem",
+              borderRadius: "16px",
+              overflow: "hidden",
               display: "flex",
               flexDirection: "column",
-              height: "100%",
-              transition: "all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+              transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+              cursor: project.link ? "pointer" : "default",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform =
-                "perspective(1500px) scale(1.05) translateY(-15px) rotateX(4deg) rotateY(-4deg)";
-              e.currentTarget.style.borderColor = "var(--accent-primary)";
+              e.currentTarget.style.transform = "translateY(-8px)";
               e.currentTarget.style.boxShadow =
-                "-20px 20px 50px rgba(0,0,0,0.3), inset 0 0 20px rgba(139, 92, 246, 0.1)";
-              e.currentTarget.querySelector(".project-folder").style.color =
-                "var(--accent-primary)";
-              e.currentTarget.querySelector(".project-folder").style.transform =
-                "scale(1.2) translateY(-5px)";
+                "0 20px 60px rgba(139, 92, 246, 0.2)";
+              e.currentTarget.style.borderColor = "var(--accent-primary)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform =
-                "perspective(1500px) scale(1) translateY(0) rotateX(0) rotateY(0)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.05)";
+              e.currentTarget.style.transform = "translateY(0)";
               e.currentTarget.style.boxShadow = "none";
-              e.currentTarget.querySelector(".project-folder").style.color =
-                "var(--text-primary)";
-              e.currentTarget.querySelector(".project-folder").style.transform =
-                "scale(1) translateY(0)";
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.05)";
             }}
           >
+            {/* Icon banner area */}
             <div
               style={{
+                background: "rgba(139, 92, 246, 0.08)",
+                borderBottom: "1px solid rgba(139, 92, 246, 0.15)",
+                height: "180px",
                 display: "flex",
-                justifyContent: "space-between",
                 alignItems: "center",
-                marginBottom: "1.5rem",
+                justifyContent: "center",
               }}
             >
               {project.icon}
             </div>
 
-            <h3
-              style={{
-                fontSize: "1.3rem",
-                marginBottom: "1rem",
-                color: "var(--text-primary)",
-              }}
-            >
-              {project.title}
-            </h3>
-
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                marginBottom: "1.5rem",
-                flexGrow: 1,
-                fontSize: "0.95rem",
-              }}
-            >
-              {project.description}
-            </p>
-
+            {/* Content */}
             <div
               style={{
+                padding: "1.75rem",
                 display: "flex",
-                flexWrap: "wrap",
-                gap: "0.75rem",
-                marginTop: "auto",
+                flexDirection: "column",
+                flexGrow: 1,
               }}
             >
-              {project.tags.map((tag, tagIndex) => (
-                <span
-                  key={tagIndex}
+              {/* Category */}
+              <span
+                style={{
+                  fontSize: "0.72rem",
+                  fontWeight: "600",
+                  letterSpacing: "0.08em",
+                  color: "var(--accent-primary)",
+                  textTransform: "uppercase",
+                  marginBottom: "0.6rem",
+                }}
+              >
+                {project.category}
+              </span>
+
+              {/* Title + link */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  justifyContent: "space-between",
+                  gap: "0.5rem",
+                  marginBottom: "0.85rem",
+                }}
+              >
+                <h3
                   style={{
-                    color: "var(--text-muted)",
-                    fontSize: "0.8rem",
-                    fontFamily: "monospace",
+                    fontSize: "1.2rem",
+                    fontWeight: "700",
+                    color: "var(--text-primary)",
+                    margin: 0,
+                    lineHeight: 1.3,
                   }}
                 >
-                  {tag}
-                </span>
-              ))}
+                  {project.title}
+                </h3>
+                {project.link && (
+                  <span
+                    onClick={() =>
+                      window.open(project.link, "_blank", "noopener,noreferrer")
+                    }
+                    style={{
+                      color: "var(--accent-primary)",
+                      flexShrink: 0,
+                      marginTop: "2px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <ExternalLink size={18} />
+                  </span>
+                )}
+              </div>
+
+              {/* Description */}
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  fontSize: "0.92rem",
+                  lineHeight: "1.65",
+                  flexGrow: 1,
+                  marginBottom: "1.25rem",
+                }}
+              >
+                {project.description}
+              </p>
+
+              {/* Tags */}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                {project.tags.map((tag, tagIndex) => (
+                  <span
+                    key={tagIndex}
+                    style={{
+                      background: "rgba(139, 92, 246, 0.08)",
+                      border: "1px solid rgba(139, 92, 246, 0.2)",
+                      color: "var(--text-secondary)",
+                      fontSize: "0.78rem",
+                      padding: "4px 12px",
+                      borderRadius: "999px",
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         ))}
