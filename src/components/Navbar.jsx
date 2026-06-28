@@ -15,6 +15,16 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('mobile-menu-active');
+      document.body.style.overflow = 'hidden'; /* Prevent scrolling background when menu is open */
+    } else {
+      document.body.classList.remove('mobile-menu-active');
+      document.body.style.overflow = 'auto';
+    }
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
@@ -81,18 +91,19 @@ const Navbar = () => {
 
       {mobileMenuOpen && (
         <div
+          className="glass-panel animate-fade-in"
           style={{
             position: "absolute",
-            top: "100%",
-            left: 0,
-            right: 0,
-            background: "var(--bg-secondary)",
+            top: "calc(100% + 1rem)", /* Float slightly below navbar */
+            left: "1rem",
+            right: "1rem",
             padding: "2rem",
-            borderBottom: "1px solid var(--border-color)",
             display: "flex",
             flexDirection: "column",
             gap: "1.5rem",
             alignItems: "center",
+            background: "var(--mobile-menu-bg)", /* Heavy frosted glass to obscure the chatbot */
+            zIndex: 40
           }}
         >
           {navLinks.map((link) => (
@@ -100,6 +111,7 @@ const Navbar = () => {
               key={link.name}
               href={link.href}
               className="nav-link"
+              style={{ fontSize: '1.2rem', fontWeight: '700', color: 'var(--text-primary)' }}
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}

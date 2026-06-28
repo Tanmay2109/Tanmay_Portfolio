@@ -7,6 +7,7 @@
   --bg-card: rgba(255, 255, 255, 0.25);
   --bg-card-hover: rgba(255, 255, 255, 0.4);
   --bg-nav: rgba(255, 255, 255, 0.35);
+  --mobile-menu-bg: rgba(147, 193, 221, 0.95); /* Requested light blue color */
   
   --text-primary: #0f172a;
   --text-secondary: #475569;
@@ -41,6 +42,7 @@
   --bg-card: rgba(255, 255, 255, 0.05);
   --bg-card-hover: rgba(255, 255, 255, 0.08);
   --bg-nav: rgba(10, 10, 10, 0.5);
+  --mobile-menu-bg: color-mix(in srgb, var(--bg-primary) 85%, transparent);
   
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa;
@@ -359,4 +361,20 @@ section {
   .container {
     padding: 0 1rem;
   }
+  .glass-panel {
+    padding: 1.5rem !important;
+    border-radius: 1.5rem !important; /* 2.5rem is too round for narrow phone screens */
+  }
+  .slider-btn {
+    display: none !important; /* Hide side arrows on phones, rely on swipe instead */
+  }
+  /* Fix the projects grid overflow on very small phones */
+  #projects > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Hide Chatbot when mobile menu is active to prevent overlaps */
+body.mobile-menu-active #chatbot-widget {
+  display: none !important;
 }

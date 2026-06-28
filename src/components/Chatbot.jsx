@@ -37,7 +37,7 @@ const Chatbot = () => {
   };
 
   return (
-    <>
+    <div id="chatbot-widget">
       {/* Floating Action Button */}
       <button 
         onClick={() => setIsOpen(true)}
@@ -213,7 +213,7 @@ const Chatbot = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
