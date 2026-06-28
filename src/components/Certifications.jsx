@@ -4,39 +4,40 @@ import { Award, ChevronLeft, ChevronRight, Navigation, CheckCircle } from 'lucid
 const Certifications = () => {
   const certificationsData = [
     {
-      title: 'NPTEL Certifications',
-      issuer: 'NPTEL (National Programme on Technology Enhanced Learning)',
+      title: "NPTEL Certifications",
+      issuer: "NPTEL (National Programme on Technology Enhanced Learning)",
       courses: [
-        'Training and Development',
-        'Soft Skill Development',
-        'Investment Management'
+        "Training and Development",
+        "Soft Skill Development",
+        "Investment Management",
+        "Data Base Management System",
       ],
       icon: <Award size={16} color="var(--accent-primary)" />,
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnuZIE0sBW1TumDoQRDx0tahiqdv7y7DUzKg&s',
-      imgStyle: { objectFit: 'contain', background: '#fff' }
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnuZIE0sBW1TumDoQRDx0tahiqdv7y7DUzKg&s",
+      imgStyle: { objectFit: "contain", background: "#fff" },
     },
     {
-      title: 'MS-CIT Certification',
-      issuer: 'Maharashtra State Certificate in Information Technology',
-      courses: [
-        'Comprehensive IT Skills and Computer Literacy Certification'
-      ],
+      title: "MS-CIT Certification",
+      issuer: "Maharashtra State Certificate in Information Technology",
+      courses: ["Comprehensive IT Skills and Computer Literacy Certification"],
       icon: <Award size={16} color="var(--accent-primary)" />,
-      image: 'https://anubhavcomputer.com/wp-content/uploads/2023/09/3.png',
-      imgStyle: { objectFit: 'contain', background: '#fff' }
+      image: "https://anubhavcomputer.com/wp-content/uploads/2023/09/3.png",
+      imgStyle: { objectFit: "contain", background: "#fff" },
     },
     {
-      title: 'Coursera Global Certifications',
-      issuer: 'Coursera (Partnered with Microsoft & Meta)',
+      title: "Coursera Global Certifications",
+      issuer: "Coursera (Partnered with Microsoft & Meta)",
       courses: [
-        'Microsoft Office',
-        'Python Programming by Microsoft',
-        'Database Structures and Management with MySQL by Meta'
+        "Microsoft Office",
+        "Python Programming by Microsoft",
+        "Database Structures and Management with MySQL by Meta",
       ],
       icon: <Award size={16} color="var(--accent-primary)" />,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/960px-Coursera-Logo_600x600.svg.png',
-      imgStyle: { objectFit: 'contain', background: '#fff', padding: '0.5rem' }
-    }
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/960px-Coursera-Logo_600x600.svg.png",
+      imgStyle: { objectFit: "contain", background: "#fff", padding: "0.5rem" },
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
