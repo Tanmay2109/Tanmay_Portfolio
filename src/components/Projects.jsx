@@ -1,5 +1,5 @@
 import React from "react";
-import { Stethoscope, Vote, Accessibility } from "lucide-react";
+import { Stethoscope, Vote, EyeOff } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -42,7 +42,7 @@ const Projects = () => {
         "Real-time Android app interfacing with an IoT-based smart blind stick. Monitors live sensor data, hazard alerts, and graphs via Firebase, with Google Sign-In authentication.",
       tags: ["Kotlin", "Android", "Firebase", "Google Sign-In API"],
       icon: (
-        <Accessibility
+        <EyeOff
           size={40}
           className="project-folder"
           style={{
