@@ -1,6 +1,7 @@
 /* Contact Section Styles */
 .contact-section {
-  padding: 6rem 0;
+  padding: 8rem 0 4rem;
+  justify-content: flex-start;
 }
 
 .contact-container {

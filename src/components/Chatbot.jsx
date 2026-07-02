@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
+import './Chatbot.css';
 
 const prebuiltQnA = [
   { q: "Where does Tanmay belong?", a: "I belong to Nagpur, Maharashtra, India! 🍊" },
@@ -66,7 +67,7 @@ const Chatbot = () => {
 
       {/* Terminal Window */}
       {isOpen && (
-        <div style={{
+        <div className="terminal-window" style={{
           position: 'fixed',
           bottom: '2rem',
           right: '2rem',
@@ -78,34 +79,30 @@ const Chatbot = () => {
           display: 'flex',
           flexDirection: 'column',
           overflow: 'hidden',
-          backgroundColor: '#0c0c0c',
-          border: '1px solid #333',
-          borderRadius: '8px 8px 0 0',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
+          borderRadius: '16px',
           animation: 'fadeInUp 0.2s ease forwards',
-          fontFamily: "'Consolas', 'Courier New', monospace"
+          fontFamily: "'SF Mono', 'Consolas', 'Courier New', monospace"
         }}>
           {/* Windows 11 Terminal Header */}
-          <div style={{
+          <div className="terminal-header" style={{
             padding: '0',
-            background: '#1c1c1c',
+            background: 'rgba(255, 255, 255, 0.05)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'stretch',
-            color: '#ccc',
-            borderBottom: '1px solid #333',
-            height: '35px'
+            height: '44px',
+            borderTopLeftRadius: '16px',
+            borderTopRightRadius: '16px'
           }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-               <div style={{
+               <div className="terminal-title" style={{
                  padding: '0 15px',
                  height: '100%',
                  display: 'flex',
                  alignItems: 'center',
-                 background: '#0c0c0c',
-                 borderRight: '1px solid #333',
-                 borderTop: '2px solid var(--accent-primary)',
-                 fontSize: '0.85rem'
+                 background: 'transparent',
+                 fontSize: '0.9rem',
+                 fontWeight: '500'
                }}>
                   <span style={{ marginRight: '8px', color: '#00ccff' }}>&#128104;&#8205;&#128187;</span> Tanmay's Terminal
                </div>
@@ -113,25 +110,18 @@ const Chatbot = () => {
             
             <div style={{ display: 'flex', alignItems: 'stretch' }}>
               <button 
+                className="terminal-close-btn"
                 onClick={() => setIsOpen(false)} 
                 style={{
                   background: 'transparent',
                   border: 'none',
-                  color: '#ccc',
                   cursor: 'pointer',
-                  width: '45px',
+                  width: '44px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  transition: 'background 0.2s'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#e81123';
-                  e.currentTarget.style.color = 'white';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = '#ccc';
+                  transition: 'all 0.2s',
+                  borderTopRightRadius: '16px'
                 }}
               >
                 <X size={16} />
@@ -140,17 +130,15 @@ const Chatbot = () => {
           </div>
 
           {/* Terminal Console Output */}
-          <div style={{
+          <div className="terminal-scroll terminal-body" style={{
             flex: 1,
-            padding: '1rem',
+            padding: '1.25rem',
             overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
             gap: '0.5rem',
-            background: '#0c0c0c',
-            color: '#ccc'
           }}>
-            <div style={{ marginBottom: '1rem', color: '#888' }}>
+            <div className="terminal-version" style={{ marginBottom: '1rem' }}>
               Tanmay's Terminal [Version 1.0.0]<br/>
               (c) Tanmay Patil. All rights reserved.<br/><br/>
             </div>
@@ -162,12 +150,12 @@ const Chatbot = () => {
                 lineHeight: '1.4'
               }}>
                 {msg.sender === 'user' ? (
-                  <div style={{ display: 'flex', gap: '8px', color: '#fff' }}>
-                    <span style={{ color: '#00ccff' }}>PS C:\Users\Visitor&gt;</span>
+                  <div className="terminal-user-text" style={{ display: 'flex', gap: '8px' }}>
+                    <span className="terminal-prompt" style={{ fontWeight: '500' }}>PS C:\Users\Visitor&gt;</span>
                     <span>{msg.text}</span>
                   </div>
                 ) : (
-                  <div style={{ color: '#00ff00', marginTop: '4px', marginBottom: '8px' }}>
+                  <div className="terminal-bot-text" style={{ marginTop: '4px', marginBottom: '8px' }}>
                     {msg.text}
                   </div>
                 )}
@@ -177,17 +165,21 @@ const Chatbot = () => {
           </div>
 
           {/* Pre-feed Questions Area - Terminal Style Commands */}
-          <div style={{ padding: '0.5rem', borderTop: '1px solid #333', background: '#111' }}>
-            <p style={{ fontSize: '0.75rem', color: '#888', marginBottom: '0.5rem', paddingLeft: '0.5rem', textTransform: 'uppercase' }}>Available Commands:</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', maxHeight: '130px', overflowY: 'auto', padding: '0 0.5rem' }}>
+          <div className="terminal-footer" style={{ 
+            padding: '0.75rem', 
+            borderBottomLeftRadius: '16px',
+            borderBottomRightRadius: '16px'
+          }}>
+            <p className="terminal-cmd-title" style={{ fontSize: '0.75rem', marginBottom: '0.5rem', paddingLeft: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: '600' }}>Available Commands:</p>
+            <div className="terminal-scroll" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', maxHeight: '130px', overflowY: 'auto', padding: '0 0.25rem' }}>
               {prebuiltQnA.map((qna, idx) => (
                 <button
                   key={idx}
+                  className="terminal-cmd-btn"
                   onClick={() => handleQuestionClick(qna)}
                   style={{
                     background: 'transparent',
                     border: 'none',
-                    color: '#00ccff',
                     padding: '0.4rem 0.2rem',
                     textAlign: 'left',
                     fontSize: '0.85rem',
@@ -195,18 +187,12 @@ const Chatbot = () => {
                     fontFamily: "'Consolas', 'Courier New', monospace",
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.5rem'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#222';
-                    e.currentTarget.style.color = '#fff';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'transparent';
-                    e.currentTarget.style.color = '#00ccff';
+                    gap: '0.5rem',
+                    borderRadius: '4px',
+                    transition: 'background 0.2s'
                   }}
                 >
-                  <span style={{ color: '#888' }}>$</span> {qna.q}
+                  <span className="terminal-cmd-prefix">$</span> {qna.q}
                 </button>
               ))}
             </div>

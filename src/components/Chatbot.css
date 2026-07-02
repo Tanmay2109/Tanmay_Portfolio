@@ -1,0 +1,145 @@
+/* Custom Scrollbar for Terminal */
+.terminal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+[data-theme="dark"] .terminal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+.terminal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+[data-theme="dark"] .terminal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Glass panel glow animation for the bot button */
+.bot-btn-pulse {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Terminal Theming */
+.terminal-window {
+  background-color: rgba(240, 248, 255, 0.65); /* Light blue glass */
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.5);
+  color: #1e293b;
+}
+[data-theme="dark"] .terminal-window {
+  background-color: rgba(10, 35, 70, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.terminal-header {
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+[data-theme="dark"] .terminal-header {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-title {
+  color: #000000;
+  font-weight: 700;
+}
+[data-theme="dark"] .terminal-title {
+  color: #fff;
+}
+
+.terminal-close-btn {
+  color: #000000;
+}
+[data-theme="dark"] .terminal-close-btn {
+  color: rgba(255, 255, 255, 0.8);
+}
+.terminal-close-btn:hover {
+  background: rgba(232, 17, 35, 0.8) !important;
+  color: white !important;
+}
+
+.terminal-body {
+  background: transparent;
+}
+
+.terminal-version {
+  color: #222222;
+  font-weight: 500;
+}
+[data-theme="dark"] .terminal-version {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.terminal-prompt {
+  color: #000000;
+  font-weight: 700;
+}
+[data-theme="dark"] .terminal-prompt {
+  color: #38bdf8;
+}
+
+.terminal-user-text {
+  color: #000000;
+  font-weight: 500;
+}
+[data-theme="dark"] .terminal-user-text {
+  color: #fff;
+}
+
+.terminal-bot-text {
+  color: #065f46; /* Very dark green */
+  font-weight: 600;
+}
+[data-theme="dark"] .terminal-bot-text {
+  color: #4ade80;
+}
+
+.terminal-footer {
+  background: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+[data-theme="dark"] .terminal-footer {
+  background: rgba(5, 15, 40, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.terminal-cmd-title {
+  color: #000000;
+  font-weight: 700;
+}
+[data-theme="dark"] .terminal-cmd-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.terminal-cmd-btn {
+  color: #0f172a;
+  font-weight: 600;
+}
+[data-theme="dark"] .terminal-cmd-btn {
+  color: #38bdf8;
+}
+.terminal-cmd-btn:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+[data-theme="dark"] .terminal-cmd-btn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.terminal-cmd-prefix {
+  color: #000000;
+  font-weight: 700;
+}
+[data-theme="dark"] .terminal-cmd-prefix {
+  color: rgba(255, 255, 255, 0.5);
+}
