@@ -54,12 +54,7 @@ const Skills = () => {
         <h2 className="section-title">Skills</h2>
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-        gap: '2rem',
-        marginBottom: '4rem'
-      }}>
+      <div className="skills-grid">
         {skills.map((skillGroup, index) => (
           <div key={index} className="glass-panel" style={{ padding: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', color: 'var(--accent-primary)' }}>
