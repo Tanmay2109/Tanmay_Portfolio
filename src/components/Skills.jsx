@@ -30,7 +30,7 @@ const Skills = () => {
       name: 'Languages', 
       items: [
         { name: 'C', icon: <SiC color="#A8B9CC" /> },
-        { name: 'C++', icon: <SiCplusplus color="#00599C" /> },
+        //{ name: 'C++', icon: <SiCplusplus color="#00599C" /> },
         { name: 'Python', icon: <FaPython color="#3776AB" /> },
         { name: 'Java', icon: <FaJava color="#007396" /> },
         { name: 'Kotlin', icon: <SiKotlin color="#7F52FF" /> }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Download, Sparkles, Code, Cpu, Database, Server, Terminal, Monitor, Cloud } from 'lucide-react';
 import resumePdf from '../assets/Tanmay_Resume.pdf';
+import eveSvg from '../assets/E V E.svg';
 
 const Hero = () => {
 
@@ -20,63 +21,50 @@ const Hero = () => {
         <Cloud size={130} color="var(--text-muted)" style={{ position: 'absolute', top: '50%', left: '5%', opacity: 0.16, animation: 'spin-slow 30s linear infinite reverse' }} />
       </div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-        <div className="animate-fade-in">
-          <span className="hero-subtitle">
-            <Sparkles size={18} />
-            Welcome to my portfolio
-          </span>
+      <div style={{ position: 'relative', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap-reverse', width: '100%', maxWidth: '1600px', margin: '0 auto', padding: '0 8%' }}>
+        
+        <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', maxWidth: '800px' }}>
+          <div className="animate-fade-in" style={{ marginBottom: '1rem' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-primary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '1.1rem' }}>
+              <Sparkles size={18} />
+              Welcome to my portfolio
+            </span>
+          </div>
+
+          <h1 className="animate-fade-in delay-100" style={{ fontSize: 'clamp(3rem, 8vw, 5.5rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+            Hi, I'm <br />
+            <span className="gradient-text">Tanmay Patil</span>
+          </h1>
+
+          <p className="animate-fade-in delay-200" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '600px', marginBottom: '3rem', lineHeight: 1.6 }}>
+            A passionate B.Tech student majoring in Computer Science and Engineering (IoT).
+            I love building innovative web applications, exploring data, and solving real-world challenges.
+          </p>
+
+          <div className="animate-fade-in delay-300" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+            <a href="#projects" className="btn btn-primary">
+              View My Work <ArrowRight size={18} />
+            </a>
+            <a href={resumePdf} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+              View Resume <Download size={18} />
+            </a>
+          </div>
         </div>
 
-        <h1 className="hero-title animate-fade-in delay-100">
-          Hi, I'm <br />
-          <span className="gradient-text">Tanmay Patil</span>
-        </h1>
-
-        <p className="hero-description animate-fade-in delay-200">
-          A passionate B.Tech student majoring in Computer Science and Engineering (IoT).
-          I love building innovative web applications, exploring data, and solving real-world challenges.
-        </p>
-
-        <div className="hero-buttons animate-fade-in delay-300">
-          <a href="#projects" className="btn btn-primary">
-            View My Work <ArrowRight size={18} />
-          </a>
-          <a href={resumePdf} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-            View Resume <Download size={18} />
-          </a>
+        <div className="animate-fade-in delay-200" style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'flex-end', paddingRight: '2rem' }}>
+          <img 
+            src={eveSvg} 
+            alt="Robot Animation" 
+            style={{ 
+              width: '100%', 
+              maxWidth: '550px', 
+              animation: 'float 4s ease-in-out infinite' 
+            }} 
+          />
         </div>
+
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="animate-float"
-        style={{
-          position: 'absolute',
-          bottom: '2rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          color: 'var(--text-muted)'
-        }}
-      >
-        <div style={{
-          width: '24px',
-          height: '40px',
-          border: '2px solid var(--text-muted)',
-          borderRadius: '12px',
-          display: 'flex',
-          justifyContent: 'center',
-          paddingTop: '6px'
-        }}>
-          <div style={{
-            width: '4px',
-            height: '8px',
-            background: 'var(--text-muted)',
-            borderRadius: '2px',
-            animation: 'float 2s infinite'
-          }} />
-        </div>
-      </div>
     </section>
   );
 };

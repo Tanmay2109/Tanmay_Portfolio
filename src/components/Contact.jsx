@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { Send, Check, X } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [modalType, setModalType] = useState(null); // 'success' or 'error'
 
   const onSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
     setStatus('Sending...');
+    setModalType(null);
 
     const formData = new FormData(event.target);
     // Use the access key from the .env file
@@ -29,19 +31,20 @@ const Contact = () => {
       }).then((res) => res.json());
 
       if (res.success) {
-        setStatus('Success! Your message has been sent.');
+        setModalType('success');
         event.target.reset(); // Clear the form
       } else {
-        setStatus('Something went wrong. Please try again.');
+        setModalType('error');
       }
     } catch (error) {
-      setStatus('Something went wrong. Please try again.');
+      setModalType('error');
     } finally {
       setIsSubmitting(false);
-      // Clear status message after 5 seconds
-      setTimeout(() => setStatus(''), 5000);
+      setStatus('');
     }
   };
+
+  const closeModal = () => setModalType(null);
 
   return (
     <section id="contact" className="contact-section">
@@ -106,23 +109,36 @@ const Contact = () => {
               {isSubmitting ? 'Sending...' : 'Send Message'}
               {!isSubmitting && <Send size={18} className="send-icon" />}
             </button>
-
-            {status && (
-              <div style={{
-                marginTop: '1rem',
-                color: status.includes('Success') ? '#10b981' : '#f43f5e',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                fontWeight: '500'
-              }}>
-                {status.includes('Success') && <CheckCircle2 size={18} />}
-                {status}
-              </div>
-            )}
           </form>
         </div>
       </div>
+
+      {/* Success / Error Modal Overlay */}
+      {modalType && (
+        <div className="contact-modal-overlay">
+          <div className="contact-modal">
+            <div className={`modal-icon-circle ${modalType}`}>
+              {modalType === 'success' ? <Check size={36} color="white" strokeWidth={3} /> : <X size={36} color="white" strokeWidth={3} />}
+            </div>
+            
+            <h3 className="modal-title">
+              {modalType === 'success' ? 'Message Sent Successfully!' : 'Oops! Error Occurred.'}
+            </h3>
+            
+            <p className="modal-description">
+              {modalType === 'success' 
+                ? 'Thank you for reaching out, Tanmay. I will get back to you shortly.' 
+                : 'There was an issue sending your message. Please try again later.'}
+            </p>
+            
+            <button className="modal-close-btn" onClick={closeModal}>
+              Close
+            </button>
+            
+            <div className="modal-glow"></div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
