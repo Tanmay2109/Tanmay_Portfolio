@@ -21,9 +21,9 @@ const Hero = () => {
         <Cloud size={130} color="var(--text-muted)" style={{ position: 'absolute', top: '50%', left: '5%', opacity: 0.16, animation: 'spin-slow 30s linear infinite reverse' }} />
       </div>
 
-      <div style={{ position: 'relative', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap-reverse', width: '100%', maxWidth: '1600px', margin: '0 auto', padding: '0 8%' }}>
+      <div className="hero-content">
         
-        <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', maxWidth: '800px' }}>
+        <div className="hero-text">
           <div className="animate-fade-in" style={{ marginBottom: '1rem' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-primary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '1.1rem' }}>
               <Sparkles size={18} />
@@ -51,15 +51,11 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="animate-fade-in delay-200" style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'flex-end', paddingRight: '2rem' }}>
+        <div className="hero-image-container animate-fade-in delay-200">
           <img 
             src={eveSvg} 
             alt="Robot Animation" 
-            style={{ 
-              width: '100%', 
-              maxWidth: '550px', 
-              animation: 'float 4s ease-in-out infinite' 
-            }} 
+            className="hero-robot" 
           />
         </div>
 

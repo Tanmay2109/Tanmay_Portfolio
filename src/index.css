@@ -365,6 +365,10 @@ section {
     padding: 1.5rem !important;
     border-radius: 1.5rem !important; /* 2.5rem is too round for narrow phone screens */
   }
+  .glass-panel.social-btn {
+    padding: 0 !important;
+    border-radius: 50% !important;
+  }
   .slider-btn {
     display: none !important; /* Hide side arrows on phones, rely on swipe instead */
   }

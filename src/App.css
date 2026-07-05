@@ -234,3 +234,67 @@ main {
   font-weight: 800;
   margin: 0;
 }
+
+/* Hero classes extracted from inline styles for responsiveness */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.hero-text {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 800px;
+}
+
+.hero-image-container {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+.hero-robot {
+  width: 100%;
+  max-width: 550px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    flex-wrap: wrap; /* Change wrap-reverse to wrap so text is below the image (or on top, depending on DOM order) */
+    flex-direction: column-reverse; /* Ensure text is on bottom, image on top if that's preferred, OR text on top image on bottom */
+    justify-content: center;
+    padding: 0 5%;
+    gap: 1rem;
+  }
+  
+  .hero-text {
+    align-items: center;
+    text-align: center;
+    flex: 1 1 100%;
+  }
+  
+  .hero-image-container {
+    justify-content: center;
+    padding-right: 0;
+    flex: 1 1 100%;
+    margin-top: -2rem; /* Bring the image up a bit */
+  }
+  
+  .hero-robot {
+    max-width: 320px;
+  }
+}
